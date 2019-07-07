@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from '../../axios-config';
+import './Generator.css';
 
 class Generator extends Component {
     state = {
@@ -47,15 +48,41 @@ class Generator extends Component {
                     this.setState({loading: false});
                 });
             }
-          
         } , 300);
         this.setState({interval: iv});
+
+
     }
 
     render() {
+
         let loading = this.state.loading ? (<span>...</span>) : (<span></span>);
+
+        let animation = (
+            <div class="loader loader--fade">
+                <span class="loader-item">1</span>
+                <span class="loader-item">2</span>
+                <span class="loader-item">3</span>
+                <span class="loader-item">4</span>
+                <span class="loader-item">5</span>
+            </div>
+        )
+        if(!this.state.loading) {
+            animation = (
+                <div class="loader">
+                    <span class="loader-item">1</span>
+                    <span class="loader-item">2</span>
+                    <span class="loader-item">3</span>
+                    <span class="loader-item">4</span>
+                    <span class="loader-item">5</span>
+                </div>
+            )
+        }
+
         return(
             <div>
+                {animation}
+
                 <p>
                 {
                     this.state.word.map(w => {
