@@ -10,6 +10,10 @@ class Generator extends Component {
         finishedRequest: true
     }
 
+    componentWillUnmount() {
+        clearInterval(iv);
+    }
+
     componentDidMount() {
         this.setState({triggered: true});
         axios.get('/getinit' )
