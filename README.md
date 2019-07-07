@@ -1,4 +1,3 @@
-https://travis-ci.com/radbrt/chatterweb.svg?branch=master
 ![Build status](https://travis-ci.com/radbrt/chatterweb.svg?branch=master "Travis Build status")
 
 # The @ministries_ebooks webapp

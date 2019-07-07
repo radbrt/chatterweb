@@ -7,11 +7,12 @@ class Generator extends Component {
         word: [],
         previous: null,
         triggered: false,
-        finishedRequest: true
+        finishedRequest: true,
+        interval: null
     }
 
     componentWillUnmount() {
-        clearInterval(iv);
+        clearInterval(this.state.iv);
     }
 
     componentDidMount() {
@@ -48,6 +49,7 @@ class Generator extends Component {
             }
           
         } , 300);
+        this.setState({interval: iv});
     }
 
     render() {
