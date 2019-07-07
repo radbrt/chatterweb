@@ -23,7 +23,7 @@ class Generator extends Component {
             this.setState({loading: false});
         });
 
-        setInterval( () => {
+        const iv = setInterval( () => {
             
             if(this.state.loading & !this.state.triggered) {
                 this.setState({triggered: true});
@@ -47,6 +47,7 @@ class Generator extends Component {
     }
 
     render() {
+        let loading = this.state.loading ? (<span>...</span>) : (<span></span>);
         return(
             <div>
                 <p>
@@ -55,6 +56,7 @@ class Generator extends Component {
                         return(<span key={w.i}>{w.word} </span>);
                     })
                 }
+                {loading}
                 </p>
             </div>
         );
